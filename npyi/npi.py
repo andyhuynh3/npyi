@@ -1,3 +1,4 @@
+import json
 import warnings
 
 import requests
@@ -28,7 +29,6 @@ class NPI:
         'country_code',
     )
     VALID_VERSIONS = ('1.0', '2.0', '2.1',)
-    VALID_USE_FIRST_NAME_ALIAS_VALUES = (True, False,)
     VALID_ADDRESS_PURPOSE_VALUES = (
         'LOCATION', 'MAILING', 'PRIMARY', 'SECONDARY',
     )
@@ -45,30 +45,48 @@ class NPI:
         self._validate_version(version)
 
         self._validate_search_params(search_params)
+
+        if 'use_first_name_alias' in search_params:
+            use_first_name_alias = search_params['use_first_name_alias']
+            use_first_name_alias = self._clean_use_first_name_alias(
+                use_first_name_alias
+            )
+            self._validate_use_first_name_alias(use_first_name_alias)
+            search_params['use_first_name_alias'] = use_first_name_alias
+
+        if 'address_purpose' in search_params:
+            address_purpose = search_params['address_purpose']
+            address_purpose = self._clear_address_purpose(
+                address_purpose
+            )
+            self._validate_address_purpose(address_purpose)
+            search_params['address_purpose'] = address_purpose
+
         search_params['version'] = version
+
         if limit is not None:
             search_params['limit'] = limit
         if skip is not None:
             search_params['skip'] = skip
-        if 'use_first_name_alias' in search_params:
-            use_first_name_alias = search_params['use_first_name_alias']
-            self._validate_use_first_name_alias(use_first_name_alias)
+
         response = requests.get(self.BASE_URI, params=search_params).json()
         self._validate_response(response)
+
         return response
 
     def _clean_version(self, version):
         version = str(version)
         if version in ('1', '2'):
-            version = f'{version}.0'
+            version += '.0'
         return version
 
     def _validate_version(self, version):
         if version not in self.VALID_VERSIONS:
             valid_version_str = ', '.join(self.VALID_VERSIONS)
             raise InvalidVersionException(
-                f'{version} is not a supported version. '
-                f'Supported versions are: {valid_version_str}'
+                '{} is not a supported version. Supported versions are: {}'.format(
+                    version, valid_version_str
+                )
             )
         if version == '1.0':
             warnings.warn(
@@ -81,16 +99,27 @@ class NPI:
                 DeprecationWarning
             )
 
+    def _clean_use_first_name_alias(self, use_first_name_alias):
+        if (
+            isinstance(use_first_name_alias, str) and
+            use_first_name_alias.lower() in ("true", "false")
+        ):
+            return json.loads(use_first_name_alias.lower())
+        else:
+            return use_first_name_alias
+
+
     def _validate_use_first_name_alias(self, use_first_name_alias):
-        if use_first_name_alias not in self.VALID_USE_FIRST_NAME_ALIAS_VALUES:
-            valid_use_first_name_alias_str = ', '.join(
-                self.VALID_USE_FIRST_NAME_ALIAS_VALUES
-            )
+        if not isinstance(use_first_name_alias, bool):
             raise InvalidUseFirstNameAliasException(
-                f'{use_first_name_alias} is not a valid value '
-                'for the use_first_name_alias param. '
-                f'Valid values are: {valid_use_first_name_alias_str}'
+                '{} is not a valid value for the use_first_name_alias param. '
+                'use_first_name_alias must be a bool'.format(
+                    use_first_name_alias,
+                )
             )
+
+    def _clear_address_purpose(self, address_purpose):
+        return address_purpose.upper()
 
     def _validate_address_purpose(self, address_purpose):
         if address_purpose not in self.VALID_ADDRESS_PURPOSE_VALUES:
@@ -98,9 +127,11 @@ class NPI:
                 self.VALID_ADDRESS_PURPOSE_VALUES
             )
             raise InvalidAddressPurposeException(
-                f'{address_purpose} is not a valid value '
-                'for the address_purpose param. '
-                f'Valid values are: {valid_address_purpose_str}'
+                '{} is not a valid value for the address_purpose param. '
+                'Valid values are: {}'.format(
+                    address_purpose,
+                    valid_address_purpose_str
+                )
             )
 
     def _validate_search_params(self, search_params):
@@ -108,8 +139,10 @@ class NPI:
             if param not in self.VALID_SEARCH_PARAMS:
                 valid_search_params_str = ', '.join(self.VALID_SEARCH_PARAMS)
                 raise InvalidParamException(
-                    f"{param} is not a valid parameter. "
-                    f"Valid search_params are: {valid_search_params_str}"
+                    "{} is not a valid parameter. Valid search_params are: {}".format(
+                        param,
+                        valid_search_params_str
+                    )
                 )
 
     def _validate_response(self, response):
