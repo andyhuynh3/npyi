@@ -54,8 +54,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'cookiecutter-pypackage'
-copyright = '2015, Audrey Roy Greenfeld'
-author = 'Audrey Roy Greenfeld'
+copyright = '2015, Andy Huynh'
+author = 'Andy Huynh'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -230,7 +230,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
   (master_doc, 'cookiecutter-pypackage.tex', 'cookiecutter-pypackage Documentation',
-   'Audrey Roy Greenfeld', 'manual'),
+   'Andy Huynh', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of

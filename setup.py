@@ -1,16 +1,21 @@
 # !/usr/bin/env python
 
 from distutils.core import setup
+
+requirements = [
+    'requests>=2.21.0',
+]
+
 setup(
-    name='cookiecutter-pypackage',
-    packages=[],
+    name='npyi',
+    packages=['npyi'],
     version='0.1.0',
-    description='Cookiecutter template for a Python package',
-    author='Audrey Roy Greenfeld',
+    description='API wrapper around the NPPES API',
+    author='Andy Huynh',
     license='BSD',
-    author_email='aroy@alum.mit.edu',
-    url='https://github.com/audreyr/cookiecutter-pypackage',
-    keywords=['cookiecutter', 'template', 'package', ],
+    author_email='andy.huynh312@gmail.com',
+    url='https://github.com/andyh1203/npyi',
+    keywords=['npyi', 'npi', 'nppes'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Console',

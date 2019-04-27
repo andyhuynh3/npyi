@@ -8,6 +8,8 @@ name = "pypi"
 [dev-packages]
 flake8 = "*"
 pytest = "*"
+tox = "*"
+Sphinx = "*"
 
 
 [packages]
@@ -16,4 +18,4 @@ requests = "*"
 
 
 [requires]
-python_version = "3.6"
+python_version = "3.5"

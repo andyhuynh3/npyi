@@ -108,7 +108,6 @@ class NPI:
         else:
             return use_first_name_alias
 
-
     def _validate_use_first_name_alias(self, use_first_name_alias):
         if not isinstance(use_first_name_alias, bool):
             raise InvalidUseFirstNameAliasException(
@@ -148,4 +147,4 @@ class NPI:
     def _validate_response(self, response):
         if 'Errors' in response:
             first_error = response['Errors'][0]['description']
-            raise NPyIException(first_error.title())
+            raise NPyIException(first_error)

@@ -18,14 +18,11 @@ def test_deprecated_version():
 
 
 def test_use_first_name_alias_valid_values():
-    npi.search(search_params={'first_name': 'James', 'use_first_name_alias': True})
-    npi.search(search_params={'first_name': 'James', 'use_first_name_alias': "True"})
-    npi.search(search_params={'first_name': 'James', 'use_first_name_alias': "true"})
-    npi.search(search_params={'first_name': 'James', 'use_first_name_alias': False})
-    npi.search(search_params={'first_name': 'James', 'use_first_name_alias': "False"})
-    npi.search(search_params={'first_name': 'James', 'use_first_name_alias': "false"})
+    for val in (True, "True", "true", False, "False", "false"):
+        npi.search(search_params={'first_name': 'James', 'use_first_name_alias': val})
     with pytest.raises(exceptions.InvalidUseFirstNameAliasException):
         npi.search(search_params={'first_name': 'James', 'use_first_name_alias': "yes"})
+    with pytest.raises(exceptions.InvalidUseFirstNameAliasException):
         npi.search(search_params={'first_name': 'James', 'use_first_name_alias': "no"})
 
 
