@@ -12,11 +12,6 @@ stages:
     - pre-test
     - test
 
-jobs:
-  include:
-    - stage: pre-test
-      env: TOXENV=flake8
-
 matrix:
   include:
     - python: 2.7
@@ -27,5 +22,10 @@ matrix:
       env: TOXENV=py35
     - python: 3.6
       env: TOXENV=py36
+
+jobs:
+  include:
+    - stage: pre-test
+      env: TOXENV=flake8
 
 script: tox
