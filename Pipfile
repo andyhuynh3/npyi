@@ -10,12 +10,10 @@ flake8 = "*"
 pytest = "*"
 tox = "*"
 Sphinx = "*"
+setuptools = "*"
 
 
 [packages]
 
-requests = "*"
-
-
-[requires]
-python_version = "3.5"
+requests = ">=2.21.0"
+nypi = {path = ".", editable = true}
