@@ -1,22 +1,12 @@
 dist: xenial
 language: python
 cache: pip
-before_script:
-  - pip install tox
+before_install:
+  - pip install -U tox
 
 notifications:
   on_success: change
   on_failure: always
-
-stages:
-  - pre-test
-  - test
-
-jobs:
-  include:
-    - name: Flake8
-      stage: pre-test
-      env: TOXENV=flake8
 
 matrix:
   include:
@@ -28,5 +18,8 @@ matrix:
       env: TOXENV=py35
     - python: 3.6
       env: TOXENV=py36
+    - python: 3.6
+      env: TOXENV=flake8
+
 
 script: tox
