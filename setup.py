@@ -1,5 +1,3 @@
-import os
-
 from setuptools import setup, find_packages
 
 version = '0.1.0'
@@ -8,7 +6,7 @@ requirements = [
 ]
 
 
-with open('README.rst', 'r', 'utf-8') as f:
+with open('README.rst', 'r', encoding='utf-8') as f:
     readme = f.read()
 
 setup(
