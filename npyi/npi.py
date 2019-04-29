@@ -41,8 +41,8 @@ def search(
     """
     Main wrapper function around the NPPES API.
 
-    :param search_params: Search criteria to the NPPES API. See VALID_SEARCH_PARAMS
-    for list of valid search params and https://npiregistry.cms.hhs.gov/registry/help-api
+    :param search_params: Search criteria to the NPPES API. See VALID_SEARCH_PARAMS for
+    list of valid search params and https://npiregistry.cms.hhs.gov/registry/help-api
     for parameter descriptions.
     :type search_params: dict
     :param version: NPPES API version to use, defaults to '2.1'.

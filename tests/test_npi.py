@@ -38,7 +38,7 @@ def test_search_invalid_response():
 
 def test_valid_search_params():
     npi_result = search(search_params={'number': '1417367343'})
-    assert len(npi_result['results']) == 1
+    assert npi_result['result_count'] == 1
     state_result = search(search_params={'first_name': 'James', 'state': 'CA'})
     assert all([
         l['state'] == 'CA'
