@@ -1,3 +1,5 @@
+import io
+
 from setuptools import setup, find_packages
 
 version = '0.1.0'
@@ -5,8 +7,7 @@ requirements = [
     'requests>=2.21.0',
 ]
 
-
-with open('README.rst', 'r', encoding='utf-8') as f:
+with io.open('README.rst', 'r', encoding='utf-8') as f:
     readme = f.read()
 
 setup(
