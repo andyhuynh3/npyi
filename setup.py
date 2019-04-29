@@ -7,15 +7,15 @@ requirements = [
     'requests>=2.21.0',
 ]
 
-here = os.path.abspath(os.path.dirname(__file__))
 
-with open(os.path.join(here, 'README.rst'), 'r', 'utf-8') as f:
+with open('README.rst', 'r', 'utf-8') as f:
     readme = f.read()
 
 setup(
     name='npyi',
     packages=find_packages(exclude=['test', 'test.*']),
     version=version,
+    long_description=readme,
     description='API wrapper around the NPPES API',
     author='Andy Huynh',
     license='BSD',
