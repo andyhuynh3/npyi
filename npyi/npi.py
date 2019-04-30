@@ -41,19 +41,19 @@ def search(
     """
     Main wrapper function around the NPPES API.
 
-    :param search_params: Search criteria to the NPPES API. See VALID_SEARCH_PARAMS for
-    list of valid search params and https://npiregistry.cms.hhs.gov/registry/help-api
-    for parameter descriptions.
+    :param search_params: Search criteria to the NPPES API. See VALID_SEARCH_PARAMS
+        for list of valid search params and
+        https://npiregistry.cms.hhs.gov/registry/help-api for parameter descriptions.
     :type search_params: dict
     :param version: NPPES API version to use, defaults to '2.1'.
     :type version: str/int, optional
-    :param limit: Limit results returned from API, defaults to None.
-    If no value is passed, 10 results are returned by default.
+    :param limit: Limit results returned from API, defaults to None. If no value is
+        passed, 10 results are returned by default.
     :type limit: int, optional
     :param skip: Bypass first N results from the response, defaults to None.
     :type skip: int, optional
     :return: API response as a dictionary, containing a "results_count"
-    and "results" key.
+        and "results" key.
     :rtype: dict
     """
 
