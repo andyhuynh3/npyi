@@ -3,6 +3,12 @@ Welcome to npyi's documentation!
 
 NPyI is an API wrapper around the `NPPES API <https://npiregistry.cms.hhs.gov/registry/help-api/>`_.
 
+To install, simply run
+
+.. code-block:: shell
+
+   pip install npyi
+
 Here's some sample usage::
 
     from npyi import npi
