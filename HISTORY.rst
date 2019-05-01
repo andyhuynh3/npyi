@@ -11,3 +11,7 @@ Release History
 ------------------
 * Replace NPI class with regular functions
 * Update README.rst with installation steps and examples
+
+0.1.2 (2019-04-30)
+------------------
+* Add documentation
