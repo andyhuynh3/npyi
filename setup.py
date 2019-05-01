@@ -19,16 +19,11 @@ tests_requirements = [
 with io.open('README.rst', 'r', encoding='utf-8') as f:
     readme = f.read()
 
-with io.open('HISTORY.rst', 'r', encoding='utf-8') as f:
-    history = f.read()
-
-long_description = readme + '\n\n' + history
-
 setup(
     name='npyi',
     packages=find_packages(exclude=['test', 'test.*']),
     version=version,
-    long_description=long_description,
+    long_description=readme,
     description='API wrapper around the NPPES API',
     author='Andy Huynh',
     license='BSD',
