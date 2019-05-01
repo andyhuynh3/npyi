@@ -13,7 +13,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/audreyr/cookiecutter-pypackage/issues
+Report bugs at https://github.com/andyh1203/npyi/issues
 
 If you are reporting a bug, please include:
 
@@ -36,13 +36,13 @@ and "help wanted" is open to whoever wants to implement it.
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-Cookiecutter PyPackage could always use more documentation, whether as part of the
+NPyI could always use more documentation, whether as part of the
 official docs, in docstrings, or even on the web in blog posts, articles, and such.
 
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/audreyr/cookiecutter-pypackage/issues.
+The best way to send feedback is to file an issue at https://github.com/andyh1203/npyi/issues.
 
 If you are proposing a new feature:
 
@@ -54,26 +54,20 @@ If you are proposing a new feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `cookiecutter-pypackage` for local development. Please note this documentation assumes
-you already have `virtualenv` and `Git` installed and ready to go.
+Ready to contribute? Here's how to set up `npyi` for local development.
 
-1. Fork the `cookiecutter-pypackage` repo on GitHub.
+1. Fork the `npyi` repo on GitHub.
 2. Clone your fork locally::
 
   .. code-block:: bash
 
-    $ cd path_for_the_repo
-    $ git clone git@github.com:YOUR_NAME/cookiecutter-pypackage.git
+    $ git@github.com:andyh1203/npyi.git
 
-3. Assuming you have virtualenv installed (If you have Python3.5 this should already be there), you can create a new environment for your local development by typing::
+3. Assuming you have pipenv installed (pip install pipenv if you don't), you can create a new environment and install dependencies for your local development by typing::
 
   .. code-block:: bash
 
-    $ virtualenv cookiecutter-pypackage-env
-    $ source cookiecutter-pypackage-env/bin/activate
-
-    This should change the shell to look something like
-    (cookiecutter-pypackage-env) $
+    $ pipenv install --dev
 
 4. Create a branch for local development::
 
@@ -83,38 +77,23 @@ you already have `virtualenv` and `Git` installed and ready to go.
 
    Now you can make your changes locally.
 
-5. When you're done making changes, check that your changes pass flake8. Since, this package contains mostly templates the flake should
-   be run for tests directory::
-
-  .. code-block:: bash
-
-    $ flake8 ./tests
-
-6. The next step would be to run the test cases. `cookiecutter-pypackage` uses py.test, you can run PyTest. Before you run pytest you should ensure all dependancies are installed::
-
-  .. code-block:: bash
-
-    $ pip install -rrequirements_dev.txt
-    $ py.test ./tests
-
-   If you get any errors while installing cryptography package (something like #include <openssl/aes.h>).
-   Please update your pip version and try again::
-
-    # Update pip
-    $ pip install -U pip
-
-7. Before raising a pull request you should also run tox. This will run the tests across different versions of Python::
+5. When you're done making changes, check that your changes pass flake8 and tests for multiple python versions using tox::
 
   .. code-block:: bash
 
     $ tox
 
-   .. note::
-      If you are missing flake8, pytest and/or tox, just pip install them into your virtualenv.
+    You can also individually run flake8 and tests
 
-8. If your contribution is a bug fix or new feature, you may want to add a test to the existing test suite. See section Add a New Test below for details.
+    .. code-block:: bash
 
-9. Commit your changes and push your branch to GitHub::
+    $ flake8
+    $ py.test
+
+
+6. If your contribution is a bug fix or new feature, you may want to add a test to the existing test suite. See section Add a New Test below for details.
+
+7. Commit your changes and push your branch to GitHub::
 
   .. code-block:: bash
 
@@ -122,7 +101,7 @@ you already have `virtualenv` and `Git` installed and ready to go.
     $ git commit -m "Your detailed description of your changes."
     $ git push origin name-of-your-bugfix-or-feature
 
-10. Submit a pull request through the GitHub website.
+8. Submit a pull request through the GitHub website.
 
 Pull Request Guidelines
 -----------------------
@@ -135,8 +114,8 @@ Before you submit a pull request, check that it meets these guidelines:
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
 
-3. The pull request should work for Python 2.7, 3.4, 3.5 and 3.6, and for PyPy. Check
-   https://travis-ci.org/audreyr/cookiecutter-pypackage/pull_requests
+3. The pull request should work for Python 2.7, 3.4, 3.5 and 3.6. Check
+   https://travis-ci.com/andyh1203/npyi/pull_requests
    and make sure that the tests pass for all supported Python versions.
 
 Add a New Test
@@ -166,7 +145,3 @@ To write and run your new test, follow these steps:
     $ git stash list
 
 6. Rerun your test and confirm that your test passes. If it passes, congratulations!
-
-.. cookiecutter: https://github.com/audreyr/cookiecutter-pypackage
-.. virtualenv: https://virtualenv.pypa.io/en/stable/installation
-.. git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
