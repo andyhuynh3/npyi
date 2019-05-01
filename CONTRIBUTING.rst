@@ -75,7 +75,7 @@ Ready to contribute? Here's how to set up `npyi` for local development.
 
     $ git checkout -b name-of-your-bugfix-or-feature
 
-   Now you can make your changes locally.
+Now you can make your changes locally.
 
 5. When you're done making changes, check that your changes pass flake8 and tests for multiple python versions using tox::
 
@@ -83,11 +83,11 @@ Ready to contribute? Here's how to set up `npyi` for local development.
 
     $ tox
 
-    You can also individually run flake8 and tests
+You can also individually run flake8 and tests
 
-    .. code-block:: bash
+  .. code-block:: bash
 
-    $ flake8
+    $ flake8 /npyi /tests setup.py
     $ py.test
 
 
