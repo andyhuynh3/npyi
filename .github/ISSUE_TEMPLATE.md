@@ -1,5 +1,5 @@
-* Date you used Cookiecutter PyPackage:
-* Cookiecutter version used, if any:
+* Date you used npyi:
+* npyi version used, if any:
 * Python version, if any:
 * Operating System:
 
