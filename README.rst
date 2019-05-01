@@ -9,6 +9,10 @@ NPyI
   https://npiregistry.cms.hhs.gov/registry/help-api
 
 
+
+* Documentation: https://npyi.readthedocs.io/en/latest/
+
+
 Install
 -------
 
