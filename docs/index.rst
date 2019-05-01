@@ -1,5 +1,6 @@
-Welcome to the NPyI documentation!
-=====================================
+Welcome to npyi's documentation!
+================================
+
 NPyI is an API wrapper around the `NPPES API <https://npiregistry.cms.hhs.gov/registry/help-api/>`_.
 
 Here's some sample usage::
@@ -35,10 +36,28 @@ Here's some sample usage::
 
 API Documentation
 -----------------
-All the API documentation.
+See below for API documentation
+
+.. toctree::
+   :maxdepth: 2
+
+   npyi
+
+Contributing
+-----------------
+See below for contribution guidelines
 
 .. toctree::
    :maxdepth: 1
 
-   npi
-   exceptions
+   contributing
+
+Release History
+-----------------
+See below for npyi's release history
+
+.. toctree::
+   :maxdepth: 1
+
+   history
+
