@@ -1,27 +1,24 @@
 dist: xenial
 language: python
 cache: pip
+env:
+    secure: WaRBjZX5ckwzbfNXWpbTwMfqD1W9WI5xDIpRm3yCjBbL4lsM+XaxJSyu7LcTZJp+jRFWD71GhPQIT4ZEb9f3wiVbKaDox0rEFsEZ7F2Kylud08sEYvVrmBZYp2CWQBf1qu/4usiVTft+b9RjDCzx/Fhw+4zbWce6vTuIE8zpi4CiF+D/Mu1E/3iASqtBYBvkhugbuwhk82Ve9PK1iKL1m8+9S+VNAgS0WKQxDbaDdVhilCnBM5H3VeaPIKxbc6W3HB01A7RMic6HeOP3GfpuXD65HQK/hRN/vUQkV8Oay3goCMasfMdC2pv/n3RgcIpV3kxGrflYT67hUduTV1qLcHFv/lPb97D4Jj2eTZd1EDEO/1e+ougrT7eGrt+aJ5sa4lprqVIuPhpLrnjo8I6p/dsqOemDGZZVaohIw6z/tuxfdsur625i2Koaso+GSKZeltw5AngUp7D0RmIOk+4tK60nzMXBouCrN6RlY+pktSK6U8oO6DUjSSrqc4H1FqDJDRdp37534oHdTENSujYPt5FznHPSpMQlSXGOywBjaw8XizVS4htDsrbmY3zRp/Z/tIOu+P1XAaRsncHMa8059byvfWwctE+exeDzx4Z6ZnUcwjs953/YkoqPf/4E/qa527iFS0henu9j3jdAqyN6zSTPcvXplYWfMM25gWBVWvE=
 before_install:
-  - pip install -U tox
-
+- pip install -U tox
 notifications:
   on_success: change
   on_failure: always
-
 matrix:
   include:
-    - python: 2.7
-      env: TOXENV=py27
-    - python: 3.4
-      env: TOXENV=py34
-    - python: 3.5
-      env: TOXENV=py35
-    - python: 3.6
-      env: TOXENV=py36
-    - python: 3.6
-      env: TOXENV=flake8
-
+  - python: 2.7
+    env: TOXENV=py27
+  - python: 3.4
+    env: TOXENV=py34
+  - python: 3.5
+    env: TOXENV=py35
+  - python: 3.6
+    env: TOXENV=py36
+  - python: 3.6
+    env: TOXENV=flake8
 script: tox
-
-after_success:
-  codecov
+after_success: codecov
