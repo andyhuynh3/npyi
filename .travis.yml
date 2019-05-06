@@ -22,3 +22,6 @@ matrix:
       env: TOXENV=flake8
 
 script: tox
+
+after_success:
+  codecov
