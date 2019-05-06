@@ -10,7 +10,8 @@
 .. image:: https://img.shields.io/badge/License-BSD%203--Clause-blue.svg
    :target: https://opensource.org/licenses/BSD-3-Clause
 
-   
+.. image:: https://img.shields.io/pypi/pyversions/npyi.svg
+   :target: https://pypi.org/project/npyi/
 
 NPyI
 ==============
