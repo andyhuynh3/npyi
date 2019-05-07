@@ -7,37 +7,30 @@ from .exceptions import (
     InvalidVersionException,
     InvalidUseFirstNameAliasException,
     InvalidAddressPurposeException,
-    NPyIException
+    NPyIException,
 )
 
 
-BASE_URI = 'https://npiregistry.cms.hhs.gov/api/'
+BASE_URI = "https://npiregistry.cms.hhs.gov/api/"
 VALID_SEARCH_PARAMS = (
-    'number',
-    'enumeration_type',
-    'taxonomy_description',
-    'first_name',
-    'use_first_name_alias',
-    'last_name',
-    'organization_name',
-    'address_purpose',
-    'city',
-    'state',
-    'postal_code',
-    'country_code',
+    "number",
+    "enumeration_type",
+    "taxonomy_description",
+    "first_name",
+    "use_first_name_alias",
+    "last_name",
+    "organization_name",
+    "address_purpose",
+    "city",
+    "state",
+    "postal_code",
+    "country_code",
 )
-VALID_VERSIONS = ('1.0', '2.0', '2.1',)
-VALID_ADDRESS_PURPOSE_VALUES = (
-    'LOCATION', 'MAILING', 'PRIMARY', 'SECONDARY',
-)
+VALID_VERSIONS = ("1.0", "2.0", "2.1")
+VALID_ADDRESS_PURPOSE_VALUES = ("LOCATION", "MAILING", "PRIMARY", "SECONDARY")
 
 
-def search(
-    search_params,
-    version='2.1',
-    limit=None,
-    skip=None
-):
+def search(search_params, version="2.1", limit=None, skip=None):
     """
     Main wrapper function around the NPPES API.
 
@@ -62,28 +55,24 @@ def search(
 
     _validate_search_params(search_params)
 
-    if 'use_first_name_alias' in search_params:
-        use_first_name_alias = search_params['use_first_name_alias']
-        use_first_name_alias = _clean_use_first_name_alias(
-            use_first_name_alias
-        )
+    if "use_first_name_alias" in search_params:
+        use_first_name_alias = search_params["use_first_name_alias"]
+        use_first_name_alias = _clean_use_first_name_alias(use_first_name_alias)
         _validate_use_first_name_alias(use_first_name_alias)
-        search_params['use_first_name_alias'] = use_first_name_alias
+        search_params["use_first_name_alias"] = use_first_name_alias
 
-    if 'address_purpose' in search_params:
-        address_purpose = search_params['address_purpose']
-        address_purpose = _clear_address_purpose(
-            address_purpose
-        )
+    if "address_purpose" in search_params:
+        address_purpose = search_params["address_purpose"]
+        address_purpose = _clear_address_purpose(address_purpose)
         _validate_address_purpose(address_purpose)
-        search_params['address_purpose'] = address_purpose
+        search_params["address_purpose"] = address_purpose
 
-    search_params['version'] = version
+    search_params["version"] = version
 
     if limit is not None:
-        search_params['limit'] = limit
+        search_params["limit"] = limit
     if skip is not None:
-        search_params['skip'] = skip
+        search_params["skip"] = skip
 
     response = requests.get(BASE_URI, params=search_params).json()
     _validate_response(response)
@@ -101,8 +90,8 @@ def _clean_version(version):
     :rtype: str
     """
     version = str(version)
-    if version in ('1', '2'):
-        version += '.0'
+    if version in ("1", "2"):
+        version += ".0"
     return version
 
 
@@ -115,21 +104,21 @@ def _validate_version(version):
     :raises InvalidVersionException: if API version is invalid
     """
     if version not in VALID_VERSIONS:
-        valid_version_str = ', '.join(VALID_VERSIONS)
+        valid_version_str = ", ".join(VALID_VERSIONS)
         raise InvalidVersionException(
-            '{} is not a supported version. Supported versions are: {}'.format(
+            "{} is not a supported version. Supported versions are: {}".format(
                 version, valid_version_str
             )
         )
-    if version == '1.0':
+    if version == "1.0":
         warnings.warn(
-            'Version 1.0 of the NPPES API will be deprecated on 2019-06-01',
-            DeprecationWarning
+            "Version 1.0 of the NPPES API will be deprecated on 2019-06-01",
+            DeprecationWarning,
         )
-    if version == '2.0':
+    if version == "2.0":
         warnings.warn(
-            'Version 2.0 of the NPPES API will be deprecated on 2019-09-01',
-            DeprecationWarning
+            "Version 2.0 of the NPPES API will be deprecated on 2019-09-01",
+            DeprecationWarning,
         )
 
 
@@ -142,9 +131,9 @@ def _clean_use_first_name_alias(use_first_name_alias):
     :return: The cleaned use_first_name_alias value
     :rtype: bool/str
     """
-    if (
-        isinstance(use_first_name_alias, str) and
-        use_first_name_alias.lower() in ("true", "false")
+    if isinstance(use_first_name_alias, str) and use_first_name_alias.lower() in (
+        "true",
+        "false",
     ):
         return json.loads(use_first_name_alias.lower())
     else:
@@ -161,10 +150,8 @@ def _validate_use_first_name_alias(use_first_name_alias):
     """
     if not isinstance(use_first_name_alias, bool):
         raise InvalidUseFirstNameAliasException(
-            '{} is not a valid value for the use_first_name_alias param. '
-            'use_first_name_alias must be a bool'.format(
-                use_first_name_alias,
-            )
+            "{} is not a valid value for the use_first_name_alias param. "
+            "use_first_name_alias must be a bool".format(use_first_name_alias)
         )
 
 
@@ -189,15 +176,10 @@ def _validate_address_purpose(address_purpose):
     :raises InvalidAddressPurposeException: if address_purpose is not a valid value
     """
     if address_purpose not in VALID_ADDRESS_PURPOSE_VALUES:
-        valid_address_purpose_str = ', '.join(
-            VALID_ADDRESS_PURPOSE_VALUES
-        )
+        valid_address_purpose_str = ", ".join(VALID_ADDRESS_PURPOSE_VALUES)
         raise InvalidAddressPurposeException(
-            '{} is not a valid value for the address_purpose param. '
-            'Valid values are: {}'.format(
-                address_purpose,
-                valid_address_purpose_str
-            )
+            "{} is not a valid value for the address_purpose param. "
+            "Valid values are: {}".format(address_purpose, valid_address_purpose_str)
         )
 
 
@@ -211,11 +193,10 @@ def _validate_search_params(search_params):
     """
     for param in search_params:
         if param not in VALID_SEARCH_PARAMS:
-            valid_search_params_str = ', '.join(VALID_SEARCH_PARAMS)
+            valid_search_params_str = ", ".join(VALID_SEARCH_PARAMS)
             raise InvalidSearchParamException(
                 "{} is not a valid parameter. Valid search_params are: {}".format(
-                    param,
-                    valid_search_params_str
+                    param, valid_search_params_str
                 )
             )
 
@@ -228,6 +209,6 @@ def _validate_response(response):
     :type response: dict
     :raises NPyIException: if the response returns an error
     """
-    if 'Errors' in response:
-        first_error = response['Errors'][0]['description']
+    if "Errors" in response:
+        first_error = response["Errors"][0]["description"]
         raise NPyIException(first_error)
