@@ -18,7 +18,7 @@ matrix:
     env: TOXENV=py36
   - python: 3.6
     env: TOXENV=flake8
-  -python: 3.6
+  - python: 3.6
     env: TOXENV=black
 script: tox
 after_success:
