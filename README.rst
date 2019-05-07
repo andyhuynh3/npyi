@@ -13,6 +13,10 @@
 .. image:: https://img.shields.io/pypi/pyversions/npyi.svg
    :target: https://pypi.org/project/npyi/
 
+.. image:: https://pyup.io/repos/github/andyh1203/npyi/shield.svg
+  :target: https://pyup.io/repos/github/andyh1203/npyi/
+  :alt: Updates
+
 NPyI
 ==============
 

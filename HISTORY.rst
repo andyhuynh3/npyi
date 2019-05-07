@@ -15,3 +15,9 @@ Release History
 0.1.2 (2019-04-30)
 ------------------
 * Add documentation
+
+0.1.3 (2019-05-06)
+------------------
+* Add badges to README
+* Add black as code formatter
+* PyUp integration

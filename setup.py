@@ -2,7 +2,7 @@ import io
 
 from setuptools import setup, find_packages
 
-version = "0.1.2"
+version = "0.1.3"
 requirements = ["requests==2.21.0"]
 
 tests_requirements = [
