@@ -399,10 +399,10 @@
         },
         "tqdm": {
             "hashes": [
-                "sha256:d385c95361699e5cf7622485d9b9eae2d4864b21cd5a2374a9c381ffed701021",
-                "sha256:e22977e3ebe961f72362f6ddfb9197cc531c9737aaf5f607ef09740c849ecd05"
+                "sha256:981544bd750360113c493bd4efb3062bb5eb6f4c0f50c0f84fd7be652f1aaf69",
+                "sha256:9b4b24510dfe8d697749cc743c173c3b7c3be78c59af43de99d451a41883e170"
             ],
-            "version": "==4.31.1"
+            "version": "==4.32.0"
         },
         "twine": {
             "hashes": [
