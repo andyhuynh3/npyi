@@ -100,10 +100,10 @@
         },
         "bleach": {
             "hashes": [
-                "sha256:213336e49e102af26d9cde77dd2d0397afabc5a6bf2fed985dc35b5d1e285a16",
-                "sha256:3fdf7f77adcf649c9911387df51254b813185e32b2c6619f690b593a617e19fa"
+                "sha256:2ffa40dfa80b141ff58eee538bce0d2a09c7d456018d00f7a2cb0ebf967c524d",
+                "sha256:f0b1ee0315062e60afa6b7cc39b1c3718b591e1d552a8841044dc49a68465659"
             ],
-            "version": "==3.1.0"
+            "version": "==3.1.2"
         },
         "certifi": {
             "hashes": [
