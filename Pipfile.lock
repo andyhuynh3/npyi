@@ -334,11 +334,10 @@
         },
         "sphinx": {
             "hashes": [
-                "sha256:423280646fb37944dd3c85c58fb92a20d745793a9f6c511f59da82fa97cd404b",
-                "sha256:de930f42600a4fef993587633984cc5027dedba2464bcf00ddace26b40f8d9ce"
+                "sha256:5da895959511473857b6d0200f56865ed62c31e8f82dd338063b84ec022701fe",
+                "sha256:6caad9786055cb1fa22b4a365c1775816b876f91966481765d7d50e9f0dd35cc"
             ],
-            "index": "pypi",
-            "version": "==2.0.1"
+            "version": "==4.4.0"
         },
         "sphinxcontrib-applehelp": {
             "hashes": [
