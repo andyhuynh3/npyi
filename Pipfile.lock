@@ -297,11 +297,8 @@
             "version": "==2019.1"
         },
         "readme-renderer": {
-            "hashes": [
-                "sha256:bb16f55b259f27f75f640acf5e00cf897845a8b3e4731b5c1a436e4b8529202f",
-                "sha256:c8532b79afc0375a85f10433eca157d6b50f7d6990f337fa498c96cd4bfc203d"
-            ],
-            "version": "==24.0"
+            "hashes": [],
+            "version": "==37.0"
         },
         "requests": {
             "hashes": [
