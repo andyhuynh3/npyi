@@ -312,11 +312,8 @@
             "version": "==2.21.0"
         },
         "requests-toolbelt": {
-            "hashes": [
-                "sha256:380606e1d10dc85c3bd47bf5a6095f815ec007be7a8b69c878507068df059e6f",
-                "sha256:968089d4584ad4ad7c171454f0a5c6dac23971e9472521ea3b6d49d610aa6fc0"
-            ],
-            "version": "==0.9.1"
+            "hashes": [],
+            "version": "==0.10.0"
         },
         "six": {
             "hashes": [
