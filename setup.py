@@ -10,7 +10,7 @@ tests_requirements = [
     "pytest==4.4.1",
     "tox==3.9.0",
     "Sphix==2.0.1",
-    "setuptools==41.0.0",
+    "setuptools==65.5.1",
     "twice==1.13.0",
 ]
 
