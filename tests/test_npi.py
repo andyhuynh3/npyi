@@ -8,10 +8,10 @@ def test_invalid_version():
         search(version="1.5", search_params={"first_name": "James"})
 
 
-def test_deprecated_version():
-    with pytest.deprecated_call():
+def test_unsupported_version():
+    with pytest.raises(exceptions.NPyIException):
         search(version="1.0", search_params={"first_name": "James"})
-    with pytest.deprecated_call():
+    with pytest.raises(exceptions.NPyIException):
         search(version="2.0", search_params={"first_name": "James"})
 
 
@@ -41,7 +41,11 @@ def test_valid_search_params():
     assert npi_result["result_count"] == 1
     state_result = search(search_params={"first_name": "James", "state": "CA"})
     assert all(
-        [l["state"] == "CA" for r in state_result["results"] for l in r["addresses"]]
+        [
+            address["state"] == "CA"
+            for result in state_result["results"]
+            for address in result["addresses"]
+        ]
     )
 
 

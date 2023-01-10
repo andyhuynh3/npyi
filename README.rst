@@ -1,22 +1,3 @@
-.. image:: https://badge.fury.io/py/npyi.svg
-    :target: https://badge.fury.io/py/npyi
-
-.. image:: https://travis-ci.com/andyh1203/npyi.svg?branch=master
-    :target: https://travis-ci.com/andyh1203/npyi
-
-.. image:: https://codecov.io/gh/andyh1203/npyi/branch/master/graph/badge.svg
-  :target: https://codecov.io/gh/andyh1203/npyi
-
-.. image:: https://img.shields.io/badge/License-BSD%203--Clause-blue.svg
-   :target: https://opensource.org/licenses/BSD-3-Clause
-
-.. image:: https://img.shields.io/pypi/pyversions/npyi.svg
-   :target: https://pypi.org/project/npyi/
-
-.. image:: https://pyup.io/repos/github/andyh1203/npyi/shield.svg
-  :target: https://pyup.io/repos/github/andyh1203/npyi/
-  :alt: Updates
-
 NPyI
 ==============
 
@@ -27,14 +8,6 @@ NPyI
 
 
 * Documentation: https://npyi.readthedocs.io/en/latest/
-
-
-Install
--------
-
-.. code-block:: shell
-
-   pip install npyi
 
 
 Examples
