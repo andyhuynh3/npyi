@@ -1,27 +1,17 @@
 [[source]]
-
-verify_ssl = true
-url = "https://pypi.python.org/simple"
 name = "pypi"
-
+url = "https://pypi.python.org/simple"
+verify_ssl = true
 
 [dev-packages]
-
+Sphinx = "==2.0.1"
+black = "==19.3b0"
 flake8 = "==3.7.7"
 pytest = "==4.4.1"
+setuptools = "==67.8.0"
 tox = "==3.9.0"
-Sphinx = "==2.0.1"
-setuptools = "==41.0.1"
 twine = "==1.13.0"
-black = "==19.3b0"
-
 
 [packages]
-
 requests = "==2.21.0"
-
-
-[packages.nypi]
-
-path = "."
-editable = true
+nypi = {editable = true,path = "."}
