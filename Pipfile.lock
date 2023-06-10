@@ -142,11 +142,8 @@
             "version": "==0.3"
         },
         "filelock": {
-            "hashes": [
-                "sha256:b8d5ca5ca1c815e1574aee746650ea7301de63d87935b3463d26368b76e31633",
-                "sha256:d610c1bb404daf85976d7a82eb2ada120f04671007266b708606565dd03b5be6"
-            ],
-            "version": "==3.0.10"
+            "hashes": [],
+            "version": "==3.12.1"
         },
         "flake8": {
             "hashes": [
