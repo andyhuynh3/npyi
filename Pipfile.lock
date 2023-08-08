@@ -369,11 +369,8 @@
             "version": "==1.0.1"
         },
         "sphinxcontrib-qthelp": {
-            "hashes": [
-                "sha256:513049b93031beb1f57d4daea74068a4feb77aa5630f856fcff2e50de14e9a20",
-                "sha256:79465ce11ae5694ff165becda529a600c754f4bc459778778c7017374d4d406f"
-            ],
-            "version": "==1.0.2"
+            "hashes": [],
+            "version": "==1.0.4"
         },
         "sphinxcontrib-serializinghtml": {
             "hashes": [
