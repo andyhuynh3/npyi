@@ -341,11 +341,8 @@
             "version": "==2.0.1"
         },
         "sphinxcontrib-applehelp": {
-            "hashes": [
-                "sha256:edaa0ab2b2bc74403149cb0209d6775c96de797dfd5b5e2a71981309efab3897",
-                "sha256:fb8dee85af95e5c30c91f10e7eb3c8967308518e0f7488a2828ef7bc191d0d5d"
-            ],
-            "version": "==1.0.1"
+            "hashes": [],
+            "version": "==1.0.5"
         },
         "sphinxcontrib-devhelp": {
             "hashes": [
