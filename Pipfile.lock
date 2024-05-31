@@ -233,11 +233,8 @@
             "version": "==19.0"
         },
         "pkginfo": {
-            "hashes": [
-                "sha256:7424f2c8511c186cd5424bbf31045b77435b37a8d604990b79d4e70d741148bb",
-                "sha256:a6d9e40ca61ad3ebd0b72fbadd4fba16e4c0e4df0428c041e01e06eb6ee71f32"
-            ],
-            "version": "==1.5.0.1"
+            "hashes": [],
+            "version": "==1.11.0"
         },
         "pluggy": {
             "hashes": [
