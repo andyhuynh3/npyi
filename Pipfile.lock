@@ -333,12 +333,8 @@
             "version": "==1.2.1"
         },
         "sphinx": {
-            "hashes": [
-                "sha256:423280646fb37944dd3c85c58fb92a20d745793a9f6c511f59da82fa97cd404b",
-                "sha256:de930f42600a4fef993587633984cc5027dedba2464bcf00ddace26b40f8d9ce"
-            ],
-            "index": "pypi",
-            "version": "==2.0.1"
+            "hashes": [],
+            "version": "==7.4.0"
         },
         "sphinxcontrib-applehelp": {
             "hashes": [
